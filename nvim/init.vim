@@ -8,7 +8,12 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'whatyouhide/vim-gotham'
+Plug 'andreasvc/vim-256noir'
+Plug 'fcpg/vim-orbital'
 call plug#end()
+
+colorscheme gotham256
 
 " Some basics:
 	nnoremap c "_c
@@ -16,7 +21,7 @@ call plug#end()
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
-	set number relativenumber
+	set number
 
 " Enable autocompletion:
 	set wildmode=longest,list,full
