@@ -7,6 +7,6 @@ fi
 
 # User specific environment and startup programs
 export EDITOR="nvim"
-export TERMINAL="gnome-terminal"
+export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
