@@ -173,3 +173,6 @@ new_window 1pixel
 
 exec --no-startup-id feh --bg-fill ~/fd.png
 for_window [class="Navigator"] floating disable
+
+exec "setxkbmap -layout us,cz,ru"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
