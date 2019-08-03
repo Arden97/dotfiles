@@ -180,3 +180,4 @@ for_window [class="Navigator"] floating disable
 bindsym Print exec scrot $HOME/Pictures/'%d-%m-%Y_%H:%M:%S'.png
 bindsym --release $mod+Print exec scrot -s $HOME/Pictures/'%d-%m-%Y_%H:%M:%S'.png
 
+exec --no-startup-id setxkbmap -model pc105 -layout us,cz,ru -option grp:alt_shift_toggle
