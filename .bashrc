@@ -17,4 +17,4 @@ export PATH
 
 # User specific aliases and functions
 VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR='nvim'
-
+LS_COLORS=$LS_COLORS:'di=1;44;30:' ; export LS_COLORS

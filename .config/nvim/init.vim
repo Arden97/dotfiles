@@ -11,9 +11,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'whatyouhide/vim-gotham'
 Plug 'andreasvc/vim-256noir'
 Plug 'fcpg/vim-orbital'
+Plug 'vim-scripts/greenvision'
 call plug#end()
 
-colorscheme gotham256
+colorscheme greenvision 
 
 " Some basics:
 	nnoremap c "_c
