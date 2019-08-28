@@ -1,4 +1,6 @@
-# .bashrc
+#
+# ~/.bashrc
+#
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -12,9 +14,14 @@ then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='\W> '
 
 # User specific aliases and functions
-VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR='nvim'
 LS_COLORS=$LS_COLORS:'di=1;44;30:' ; export LS_COLORS
+export PS1="\e[34m\]\W/\[\e[m\] "
+VISUAL=/bin/nvim; export VISUAL EDITOR=/bin/nvim; export EDITOR
+
