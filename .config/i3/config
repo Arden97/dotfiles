@@ -135,7 +135,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -176,6 +176,7 @@ new_window 1pixel
 
 exec --no-startup-id feh --bg-fill /home/arden/Pictures/space_cataclysm.png
 for_window [class="Navigator"] floating disable
+exec --no-startup-id compton
 
 bindsym Print exec scrot $HOME/Pictures/'%d-%m-%Y_%H:%M:%S'.png
 bindsym --release $mod+Print exec scrot -s $HOME/Pictures/'%d-%m-%Y_%H:%M:%S'.png

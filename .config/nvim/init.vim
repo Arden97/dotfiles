@@ -14,7 +14,7 @@ Plug 'fcpg/vim-orbital'
 Plug 'vim-scripts/greenvision'
 call plug#end()
 
-colorscheme greenvision 
+"colorscheme gotham
 
 " Some basics:
 	nnoremap c "_c
@@ -23,6 +23,11 @@ colorscheme greenvision
 	syntax on
 	set encoding=utf-8
 	set number
+	highlight Normal ctermfg=green ctermbg=NONE guibg=NONE
+	highlight NonText ctermfg=green ctermbg=NONE guibg=NONE
+	highlight LineNr ctermfg=NONE ctermbg=NONE
+	highlight Comment ctermfg=black ctermbg=NONE 
+
 
 " Enable autocompletion:
 	set wildmode=longest,list,full
@@ -45,3 +50,22 @@ colorscheme greenvision
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
