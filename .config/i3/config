@@ -91,7 +91,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+# bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -134,8 +134,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -164,24 +162,27 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3status
-#}
-
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-new_window 1pixel
-
-exec --no-startup-id feh --bg-fill /home/arden/Pictures/space_cataclysm.png
-for_window [class="Navigator"] floating disable
-exec --no-startup-id compton
-
+# Screenshots
 bindsym Print exec scrot $HOME/Pictures/'%d-%m-%Y_%H:%M:%S'.png
 bindsym --release $mod+Print exec scrot -s $HOME/Pictures/'%d-%m-%Y_%H:%M:%S'.png
 
-exec --no-startup-id setxkbmap -model pc105 -layout us,cz,ru -option grp:alt_shift_toggle
-
+# Lock screen
 bindsym $mod+shift+x exec betterlockscreen -l dim
 bindsym $mod+shift+s exec betterlockscreen -s dim
+
+# No window bars
+new_window 1pixel
+
+for_window [class="Navigator"] floating disable
+
+# Compositor
+exec --no-startup-id compton
+
+# Keyboard layout
+exec --no-startup-id setxkbmap -model pc105 -layout us,cz,ru -option grp:alt_shift_toggle
+
+# Polybar 
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Wallpaper 
+exec --no-startup-id feh --bg-fill /home/arden/Pictures/pagoda.jpg
