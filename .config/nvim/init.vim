@@ -8,10 +8,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'whatyouhide/vim-gotham'
-Plug 'andreasvc/vim-256noir'
-Plug 'fcpg/vim-orbital'
-Plug 'vim-scripts/greenvision'
 call plug#end()
 
 "colorscheme gotham
@@ -51,6 +47,7 @@ call plug#end()
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+" Hide status bar
 let s:hidden_all = 0
 function! ToggleHiddenAll()
     if s:hidden_all  == 0
