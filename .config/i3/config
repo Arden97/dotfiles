@@ -178,11 +178,5 @@ for_window [class="Navigator"] floating disable
 # Compositor
 exec --no-startup-id compton
 
-# Keyboard layout
-exec --no-startup-id setxkbmap -model pc105 -layout us,cz,ru -option grp:alt_shift_toggle
-
 # Polybar 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Wallpaper 
-exec --no-startup-id feh --bg-fill /home/arden/Pictures/pagoda.jpg

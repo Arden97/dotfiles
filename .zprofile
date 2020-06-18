@@ -4,13 +4,7 @@
 
 [[ -f ~/.zshrc ]] && . ~/.zshrc
 
-if [[ ! $DISPlAY && $XDG_VTNR -eq 1 ]]; then
-         exec startx /usr/bin/i3
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	# exec startx /usr/bin/i3
+	exec startx
 fi
-
-# User specific environment and startup programs
-export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="firefox"
-export READER="zathura"
-

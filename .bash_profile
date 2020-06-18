@@ -1,12 +1,10 @@
-# .bash_profile
+#
+# ~/.bash_profile
+#
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+if [[ ! $DISPlAY && $XDG_VTNR -eq 1 ]]; then
+	# exec startx /usr/bin/i3
+	exec startx
 fi
-
-# User specific environment and startup programs
-export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="firefox"
-export READER="zathura"
