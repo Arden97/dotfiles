@@ -1,3 +1,12 @@
+export EDITOR=""
+export VISUAL=""
+export TERMINAL=""
+export BROWSER=""
+export READER=""
+export AUDIO=""
+export VIDEO=""
+export IMAGE=""
+
 function precmd() {
     # Print a newline before the prompt, unless it's the
     # first prompt in the process.
