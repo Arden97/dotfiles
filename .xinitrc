@@ -14,17 +14,8 @@ fi
 # Keyboard layout
 setxkbmap -model pc105 -layout us,cz,ru -option grp:alt_shift_toggle
 
-# User specific environment and startup programs
-export EDITOR="nvim"
-export VISUAL="nvim"
-export TERMINAL="st"
-export BROWSER="firefox"
-export READER="zathura"
-
 # Wallpaper
-feh --bg-fill /home/arden/Pictures/pagoda.jpg
+# feh --bg-fill /home/arden/Pictures/pagoda.jpg
 
-# exec i3
-
-dwmblocks &
+# dwmblocks &
 exec dwm
