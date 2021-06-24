@@ -1,6 +1,3 @@
-#
-# ~/.bashrc
-#
 export EDITOR=""
 export VISUAL=""
 export TERMINAL=""
