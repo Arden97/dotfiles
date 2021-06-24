@@ -1,11 +1,11 @@
-export EDITOR="nvim"
-export VISUAL="nvim"
-export TERMINAL="gnome-terminal"
-export BROWSER="firefox"
-export READER="evince"
-export AUDIO="rhythmbox"
-export VIDEO="totem"
-export IMAGE="gnome-photos"
+export EDITOR=""
+export VISUAL=""
+export TERMINAL=""
+export BROWSER=""
+export READER=""
+export AUDIO=""
+export VIDEO=""
+export IMAGE=""
 
 function precmd() {
     # Print a newline before the prompt, unless it's the
