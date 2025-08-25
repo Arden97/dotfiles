@@ -14,23 +14,8 @@ export PATH
 
 setopt EXTENDED_GLOB
 
-# Newline before prompt (after first)
-precmd() {
-  if [[ -z "$NEW_LINE_BEFORE_PROMPT" ]]; then
-    NEW_LINE_BEFORE_PROMPT=1
-  elif [[ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]]; then
-    printf '\n'
-  fi
-}
-
-# Prompt
 autoload -U promptinit; promptinit
-autoload -U colors; colors
-PROMPT='%F{blue}%~%f'$'\n''→ '
-RPROMPT=''
-
-# Non-interactive guard
-[[ $- != *i* ]] && return
+prompt pure
 
 # History
 HISTSIZE=10000
@@ -45,6 +30,10 @@ if ls --version >/dev/null 2>&1; then
 else
   alias ls='ls -G'
 fi
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/fzf/shell/key-bindings.zsh
+export FZF_DEFAULT_COMMAND="fd --type f"
 
 # Completion
 autoload -U compinit
